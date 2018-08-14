@@ -10,7 +10,7 @@ describe("Component", () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('functions of the App component', () => {
+    test("functions of the App component", () => {
         let appComp = renderer.create(<App />).getInstance();
         appComp.change(7);
         //console.log("appComponent: ", appComp);
