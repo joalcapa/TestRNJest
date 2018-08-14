@@ -17,6 +17,8 @@ describe("Api test", () => {
         });
 
         const response = await Users.all();
+
+        console.warn(global.fetch.mock.calls);
         expect(response.Id).toBe(1);
     });
 });
