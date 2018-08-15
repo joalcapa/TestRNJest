@@ -6,14 +6,17 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "test -u": "jest -u",
-    "test:watch" : "jest --watchAll",
-    "test:coverage" : "jest --coverage",
-    "test:coverage-all" : "jest --coverage --watchAll"
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "test:coverage-all": "jest --coverage --watchAll"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.2.0",
-    "react-native": "^0.55.0"
+    "react-native": "^0.55.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-jest": "^22.2.0",

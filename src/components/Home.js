@@ -33,11 +33,6 @@ export default class Home extends Component<Props> {
                     onChangeText={(text) => this.change(text)}
                     style={{ backgroundColor: 'gray', marginBottom: 15}}
                     placeholder="Enter username" />
-                <TextInput
-                    testID={'password'}
-                    onChangeText={(text) => this.change(text)}
-                    style={{ backgroundColor: 'gray'}}
-                    placeholder="Enter password" />
             </View>
         );
     }

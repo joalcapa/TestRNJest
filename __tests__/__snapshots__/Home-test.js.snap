@@ -23,16 +23,5 @@ exports[`Component renders component Home 1`] = `
     }
     testID="username"
   />
-  <TextInput
-    allowFontScaling={true}
-    onChangeText={[Function]}
-    placeholder="Enter password"
-    style={
-      Object {
-        "backgroundColor": "gray",
-      }
-    }
-    testID="password"
-  />
 </View>
 `;
