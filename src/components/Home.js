@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
-import Duck from '../duck/';
+import { connect } from 'react-redux';
 
-//import Profile from './src/Profile';
-//import Users from './src/users';
+import * as actions from "./actions";
 
 type Props = {};
-export default class Home extends Component<Props> {
+class Home extends Component<Props> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        console.log("store: ", this.props);
         this.state = {
             data: "test"
         }
@@ -23,7 +23,6 @@ export default class Home extends Component<Props> {
 */
     change(x) {
         console.log("Duck: ", Duck);
-        Duck.duckOperations.loadTeamsAll();
         this.setState({data: x*10});
         console.log("Go change", this.state.data);
         return x*5;
@@ -41,6 +40,13 @@ export default class Home extends Component<Props> {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+    };
+}
+
+export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
     container: {
