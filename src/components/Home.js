@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { loadTeams } from '../duck/actions';
@@ -22,30 +22,31 @@ class Home extends Component<Props> {
          });
     }
 */
-    change(x) {
+    onButtonPreset() {
        // console.log("Duck: ", Duck);
         this.props.loadTeams();
-        this.setState({data: x*10});
+        console.log("Teams: ", this.props.teams);
         console.log("Go change", this.state.data);
-        return x*5;
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <TextInput
-                    testID={'username'}
-                    onChangeText={(text) => this.change(text)}
-                    style={{ backgroundColor: 'gray', marginBottom: 15}}
-                    placeholder="Enter username" />
+                <Button
+                    onPress={this.onButtonPreset}
+                    title="Learn More"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
             </View>
         );
     }
 }
 
 function mapStateToProps(state) {
+    console.log("Se modifico el state: ", state);
     return {
-        teams: state.teams
+        teams: state.teamsReducer.teams
     };
 }
 

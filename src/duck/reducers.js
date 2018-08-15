@@ -1,6 +1,18 @@
 import { combineReducers } from "redux";
 import * as types from "./types";
 
+
+let teams = [
+    {
+        name: 'Jose',
+        dorsal: 7
+    },
+    {
+        name: 'Alberto',
+        dorsal: 17
+    }
+];
+
 export const teamsReducer = ( state = null, action ) => {
     switch( action.type ) {
         case types.LOAD_TEAMS:
@@ -8,17 +20,15 @@ export const teamsReducer = ( state = null, action ) => {
             return {
                 teams: [
                     {
-                        name: 'Jose',
-                        dorsal: 7
-                    },
-                    {
-                        name: 'Alberto',
-                        dorsal: 17
+                        name: 'Messi',
+                        dorsal: 10
                     }
                 ]
             };
 
-        default: return state;
+        default: return {
+            teams: teams
+        };
     }
 }
 
