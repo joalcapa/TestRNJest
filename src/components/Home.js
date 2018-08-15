@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
-
-import * as actions from "./actions";
+import { bindActionCreators } from 'redux';
+import { loadTeams } from '../duck/actions';
 
 type Props = {};
 class Home extends Component<Props> {
@@ -10,6 +10,7 @@ class Home extends Component<Props> {
     constructor(props) {
         super(props);
         console.log("store: ", this.props);
+        //console.log("Store: ", this.props.getState());
         this.state = {
             data: "test"
         }
@@ -22,7 +23,8 @@ class Home extends Component<Props> {
     }
 */
     change(x) {
-        console.log("Duck: ", Duck);
+       // console.log("Duck: ", Duck);
+        this.props.loadTeams();
         this.setState({data: x*10});
         console.log("Go change", this.state.data);
         return x*5;
@@ -43,10 +45,15 @@ class Home extends Component<Props> {
 
 function mapStateToProps(state) {
     return {
+        teams: state.teams
     };
 }
 
-export default connect(mapStateToProps)(Home);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ loadTeams }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 const styles = StyleSheet.create({
     container: {
