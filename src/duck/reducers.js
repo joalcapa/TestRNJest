@@ -1,16 +1,20 @@
 import { combineReducers } from "redux";
 import * as types from "./types";
 
-const teamsReducer = ( state = false, action ) => {
+export const teamsReducer = ( state = null, action ) => {
     switch( action.type ) {
-        case types.LOAD_TEAMS: return true;
+        case types.LOAD_TEAMS:
+            console.log("Load Teams ...");
+            return {
+                name: 'jose'
+            };
         /* ... */
         default: return state;
     }
 }
 
 const reducer = combineReducers( {
-    teams: teamsReducer
-} );
+    teamsReducer: teamsReducer
+});
 
 export default reducer;

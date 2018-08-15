@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, TextInput} from 'react-native';
+import { StyleSheet, View, TextInput } from 'react-native';
+import Duck from '../duck/';
+
 //import Profile from './src/Profile';
 //import Users from './src/users';
 
@@ -12,16 +14,18 @@ export default class Home extends Component<Props> {
             data: "test"
         }
     }
-
+/*
     componentDidMount() {
-        /* Users.all().then((data) => {
+        Users.all().then((data) => {
          console.warn("chack api data", data);
-         });*/
+         });
     }
-
+*/
     change(x) {
+        console.log("Duck: ", Duck);
+        Duck.duckOperations.loadTeamsAll();
         this.setState({data: x*10});
-        console.log("data", this.state.data);
+        console.log("Go change", this.state.data);
         return x*5;
     }
 
