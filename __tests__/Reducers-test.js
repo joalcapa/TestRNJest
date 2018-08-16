@@ -6,4 +6,8 @@ describe("Test Reducers Team", () => {
     test("state undefined", () => {
        expect(teamsReducer(undefined, {})).toBeNull();
     });
+
+    test("test a reducer async", () =>{
+
+    });
 });
