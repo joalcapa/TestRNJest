@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, TextInput, Button } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { loadTeams } from '../duck/actions';
@@ -10,10 +10,8 @@ class Home extends Component<Props> {
     constructor(props) {
         super(props);
         console.log("store: ", this.props);
-        //console.log("Store: ", this.props.getState());
-        this.state = {
-            data: "test"
-        }
+        console.log("Teams: ", this.props.teams);
+        this.loadTeamsRender = this.loadTeamsRender.bind(this);
     }
 /*
     componentDidMount() {
@@ -22,19 +20,25 @@ class Home extends Component<Props> {
          });
     }
 */
-    onButtonPreset() {
-       // console.log("Duck: ", Duck);
+    loadTeamsRender() {
         this.props.loadTeams();
-        console.log("Teams: ", this.props.teams);
-        console.log("Go change", this.state.data);
     }
 
     render() {
+        var listItems = this.props.teams.map((item, index) => {
+            return (
+                <Text key="{index}">
+                   {item.name}
+                </Text>
+            );
+        });
+
         return (
             <View style={styles.container}>
+                { listItems }
                 <Button
-                    onPress={this.onButtonPreset}
-                    title="Learn More"
+                    onPress={this.loadTeamsRender}
+                    title="load teams"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
                 />
