@@ -1,9 +1,23 @@
 import * as types from "./types";
+import axios from 'axios';
 
-const loadTeams = ( ) => ( {
-    type: types.LOAD_TEAMS
-} );
+const loadTeams = (teams) => ( {
+    type: types.LOAD_TEAMS,
+    payload: teams
+});
+
+const fetchTeams = () => {
+    return dispatch => {
+        axios
+            .get(`http://swapi.co/api/people`)
+            .then(res => {
+                dispatch(loadTeams(res.data.results));
+            })
+            .catch(err => {});
+    };
+};
 
 export {
-    loadTeams
+    loadTeams,
+    fetchTeams
 };

@@ -18,12 +18,7 @@ export const teamsReducer = ( state = null, action ) => {
         case types.LOAD_TEAMS:
             console.log("Load Teams ...");
             return {
-                teams: [
-                    {
-                        name: 'Messi',
-                        dorsal: 10
-                    }
-                ]
+                teams: action.payload
             };
 
         default: return {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { loadTeams } from '../duck/actions';
+import { fetchTeams } from '../duck/actions';
 
 type Props = {};
 class Home extends Component<Props> {
@@ -21,7 +21,7 @@ class Home extends Component<Props> {
     }
 */
     loadTeamsRender() {
-        this.props.loadTeams();
+        this.props.fetchTeams();
     }
 
     render() {
@@ -55,7 +55,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ loadTeams }, dispatch);
+    return bindActionCreators({ fetchTeams }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
