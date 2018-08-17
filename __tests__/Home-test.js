@@ -12,7 +12,6 @@ const expect = global.expect;
 
 describe("Component", () => {
     test('renders component Home', () => {
-
         const tree = renderer.create(
             <Provider store={store}>
                 <Home />

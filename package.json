@@ -8,7 +8,8 @@
     "test -u": "jest -u",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "test:coverage-all": "jest --coverage --watchAll"
+    "test:coverage-all": "jest --coverage --watchAll",
+    "run jacp" : "node jacp/jacp.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
