@@ -16,7 +16,8 @@ npm run jacp
 jacp => script for test mocks and configurations
 
 ##usage jacp
-`javascript
+
+``` javascript
 let mocksGUI = require('./Mocks/GUIMocks')(jest);
 mocksGUI.init();
-`
+``` 
