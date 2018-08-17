@@ -4,9 +4,13 @@ Example for movies
 
 
 ### use
+`
 npm test OR npm test -- -u nameComponent.js (rendering components)
+`
 
 ### Mocks for test
+`
 npm run jacp
+`
 
 jacp => script for test mocks and configurations
