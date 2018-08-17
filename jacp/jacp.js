@@ -18,10 +18,10 @@ if (!fs.existsSync('./__tests__/')){
 
 fs.writeFile('__tests__/Configuration/ConfigMocks.json', mocks, (err) => {
     if (err) throw err;
-    console.log('The file has been saved!');
+    console.log('Configurations Mocks created!');
 });
 
-fs.writeFile('__tests__/Mocks/GUIMocks2.js', GUIMocks, (err) => {
+fs.writeFile('__tests__/Mocks/GUIMocks.js', GUIMocks, (err) => {
     if (err) throw err;
-    console.log('The file has been saved!');
+    console.log('Mocks GUI created!!');
 });
