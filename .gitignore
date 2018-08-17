@@ -58,3 +58,5 @@ buck-out/
 android/
 ios/
 .idea/
+__tests__/Configuration/
+__tests__/Mocks/
