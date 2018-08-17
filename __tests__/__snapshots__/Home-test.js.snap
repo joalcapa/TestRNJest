@@ -11,17 +11,25 @@ exports[`Component renders component Home 1`] = `
     }
   }
 >
-  <TextInput
+  <Text
+    accessible={true}
     allowFontScaling={true}
-    onChangeText={[Function]}
-    placeholder="Enter username"
-    style={
-      Object {
-        "backgroundColor": "gray",
-        "marginBottom": 15,
-      }
-    }
-    testID="username"
+    ellipsizeMode="tail"
+  >
+    Jose
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Alberto
+  </Text>
+  <Button
+    accessibilityLabel="Learn more about this purple button"
+    color="#841584"
+    onPress={[Function]}
+    title="load teams"
   />
 </View>
 `;

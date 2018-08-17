@@ -9,39 +9,43 @@ class Home extends Component<Props> {
 
     constructor(props) {
         super(props);
-        console.log("store: ", this.props);
-        console.log("Teams: ", this.props.teams);
+        //console.log("store: ", this.props);
+        //console.log("Teams: ", this.props.teams);
         this.loadTeamsRender = this.loadTeamsRender.bind(this);
     }
-/*
-    componentDidMount() {
-        Users.all().then((data) => {
-         console.warn("chack api data", data);
-         });
-    }
-*/
+
+    /*
+     componentDidMount() {
+     Users.all().then((data) => {
+     console.warn("chack api data", data);
+     });
+     }
+     */
+
     loadTeamsRender() {
-        this.props.fetchTeams();
+        //this.props.fetchTeams();
     }
 
     render() {
+
         var listItems = this.props.teams.map((item) => {
             return (
                 <Text key={item.name}>
-                   {item.name}
+                    {item.name}
                 </Text>
             );
         });
 
+
         return (
             <View style={styles.container}>
-                { listItems }
-                 <Button
+                {  listItems  }
+                { /* <Button
                     onPress={this.loadTeamsRender}
                     title="load teams"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
-                 />
+                /> */}
             </View>
         );
     }
