@@ -25,9 +25,9 @@ class Home extends Component<Props> {
     }
 
     render() {
-        var listItems = this.props.teams.map((item, index) => {
+        var listItems = this.props.teams.map((item) => {
             return (
-                <Text key="{index}">
+                <Text key="{item.name}">
                    {item.name}
                 </Text>
             );

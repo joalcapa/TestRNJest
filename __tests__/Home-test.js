@@ -10,9 +10,9 @@ const expect = global.expect;
 describe("Component", () => {
     test('renders component Home', () => {
         const tree = renderer.create(
-            <Provider store={store}>
+         //   <Provider store={store}>
                 <Home />
-            </Provider>
+           // </Provider>
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });
