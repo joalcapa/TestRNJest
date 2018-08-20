@@ -8,7 +8,7 @@ const loadTeams = (teams) => ( {
 
 const fetchTeams = () => {
     return dispatch => {
-        axios
+        return axios
             .get(`http://swapi.co/api/people`)
             .then(res => {
                 dispatch(loadTeams(res.data.results));
