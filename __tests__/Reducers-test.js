@@ -7,8 +7,7 @@ describe("Test Reducers Team", () => {
        expect(teamsReducer(undefined, {})).toBeDefined();
     });
 /*
-    test("test a reducer async", () =>{
-
+    test("state defined api async", async ()=> {
     });
 */
 });
